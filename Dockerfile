@@ -9,11 +9,13 @@ MAINTAINER Manuel Mueller
 #          \/    \/                        \/     \/_____/      \/
 #
 
+## server runs at port 7000
+
 # get base
 RUN apt-get update && apt-get upgrade -y
 
 # get essentials
-RUN apt-get -y install git nano python3 python3-pip
+RUN apt-get -y install git nano python3 python3-pip supervisor
 
 # get Knowledge
 RUN pip3 install --upgrade "knowledge-repo[all]"
