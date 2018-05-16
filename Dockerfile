@@ -20,6 +20,13 @@ RUN apt-get -y install git nano python3 python3-pip supervisor
 # get Knowledge
 RUN pip3 install --upgrade "knowledge-repo[all]"
 
+# get the knowledge_repo
+WORKDIR /home
+RUN git clone https://github.com/Pixelartist/knowledge_repo.git
+
+# add supervisor
+COPY knowledge_repo.conf /etc/supervisor/conf.d/
+
 # Run services
 COPY start.sh /
 RUN chmod +x /start.sh
