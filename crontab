@@ -1,0 +1,2 @@
+* * * * * root cd /home/knowledge_repo && git fetch && git reset --hard origin/master
+# Mandatory blank line

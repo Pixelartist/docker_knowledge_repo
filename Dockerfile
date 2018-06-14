@@ -27,6 +27,11 @@ RUN git clone https://github.com/Pixelartist/knowledge_repo.git
 # add supervisor
 COPY knowledge_repo.conf /etc/supervisor/conf.d/
 
+# cron the fetch
+COPY crontab /etc/cron.d/knowledge_repo
+RUN chmod 0644 /etc/cron.d/knowledge_repo
+RUN service cron start
+
 # Run services
 COPY start.sh /
 RUN chmod +x /start.sh
