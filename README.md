@@ -15,3 +15,7 @@ docker run -p 5432:5432 --name knowledgedb -e POSTGRES_PASSWORD=secret -d postgr
 user postrges, db postgres
 
 postgresql://postgres:secret@172.17.0.2:5432/postgres
+
+psql -h localhost -p 5432 -U postgres
+
+create database knowledge_repo;
