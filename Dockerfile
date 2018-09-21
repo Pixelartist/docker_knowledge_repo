@@ -15,10 +15,13 @@ MAINTAINER Manuel Mueller
 RUN apt-get update && apt-get upgrade -y
 
 # get essentials
-RUN apt-get -y install git nano python3 python3-pip supervisor cron
+RUN apt-get -y install git nano python python-pip python-psycopg2 supervisor cron
+
+# get the psychop2
+RUN pip install psycopg2-binary
 
 # get Knowledge
-RUN pip3 install --upgrade "knowledge-repo[all]"
+RUN pip install --upgrade "knowledge-repo[all]"
 
 # get the knowledge_repo
 WORKDIR /home
